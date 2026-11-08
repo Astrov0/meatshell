@@ -517,7 +517,7 @@ export component AppWindow inherits Window {
     // drive the winit window via Rust.
     // Default true so the window is frameless from creation (no native-bar flash);
     // Rust sets it false on macOS, which keeps native decorations.
-    in-out property <bool> custom-titlebar: true;
+    in-out property <bool> custom-titlebar: false;
     // macOS immersive title bar: Rust makes the native bar transparent and lets
     // content render under it, so we reserve this much space at the top for the
     // traffic-light buttons + a clean drag strip (0 elsewhere). See setup_macos_platform.
