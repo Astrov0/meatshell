@@ -469,7 +469,7 @@ export component AppWindow inherits Window {
     icon: @image-url("../assets/icon.png");
     // Frameless when we draw our own title bar (#119); Rust sets custom-titlebar
     // true on Windows/Linux. Slint maps no-frame → winit set_decorations(false).
-    no-frame: root.custom-titlebar;
+    // no-frame: root.custom-titlebar;
     min-width: 720px;
     min-height: 420px;
     preferred-width: 1440px;
