@@ -17,8 +17,7 @@ permissions:
 jobs:
   publish-update-manifest:
     name: Publish update manifest
-    # needs: [check-version, build, build-flatpak, build-linux-aarch64-glibc228, build-linux-x86_64-glibc228]
-    needs: [build, build-flatpak, build-linux-aarch64-glibc228, build-linux-x86_64-glibc228]
+    needs: [check-version, build, build-flatpak, build-linux-aarch64-glibc228, build-linux-x86_64-glibc228]
     if: ${{ !cancelled() && needs.check-version.result == 'success' && startsWith(github.ref, 'refs/tags/') && !contains(github.ref_name, '-') }}
     runs-on: ubuntu-latest
     steps:
@@ -45,7 +44,6 @@ jobs:
           gh release upload "$GITHUB_REF_NAME" latest.json --clobber --repo "$GITHUB_REPOSITORY"
 
   check-version:
-    if: false
     name: Check tag version
     runs-on: ubuntu-latest
     steps:
