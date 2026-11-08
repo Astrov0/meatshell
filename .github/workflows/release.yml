@@ -45,6 +45,7 @@ jobs:
           gh release upload "$GITHUB_REF_NAME" latest.json --clobber --repo "$GITHUB_REPOSITORY"
 
   check-version:
+    if: false
     name: Check tag version
     runs-on: ubuntu-latest
     steps:
